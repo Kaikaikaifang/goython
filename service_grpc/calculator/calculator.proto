@@ -1,0 +1,27 @@
+edition = "2023";
+
+package calculator;
+
+// 字段存在性检查: EXPLICIT(显式) or IMPLICIT(隐式)
+option features.field_presence = EXPLICIT;
+option go_package = "github.com/Kaikaikaifang/goython/service_grpc/calculator";
+
+// Calculator is a service that implements basic arithmetic operations.
+service Calculator {
+    // Adds two numbers
+    //
+    // a: The first number to add
+    // b: The second number to add
+    rpc Add(AddRequest) returns (AddResponse) {}
+}
+
+// AddRequest is the request message for the Add service.
+message AddRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+// AddResponse is the response message for the Add service.
+message AddResponse {
+    int32 result = 1;
+}
