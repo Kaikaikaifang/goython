@@ -9,10 +9,10 @@ proto: $(SOURCES)
     $(SERVICE_NAME)/$(SERVICE_NAME).proto
 
 	python3 -m grpc_tools.protoc -I $(SERVICE_NAME) \
-	--python_out=$(SERVICE_NAME) --pyi_out=$(SERVICE_NAME) \
-	--grpc_python_out=$(SERVICE_NAME) \
-	$(SERVICE_NAME)/$(SERVICE_NAME).proto
+    --python_out=$(SERVICE_NAME)_client --pyi_out=$(SERVICE_NAME)_client \
+    --grpc_python_out=$(SERVICE_NAME)_client \
+    $(SERVICE_NAME)/$(SERVICE_NAME).proto
 
 clean:
 	go clean
-	rm -f $(SERVICE_NAME)/*.pb.go $(SERVICE_NAME)/*.py $(SERVICE_NAME)/*.pyi
+	rm -f $(SERVICE_NAME)/*.pb.go $(SERVICE_NAME)_client/*.py $(SERVICE_NAME)_client/*.pyi

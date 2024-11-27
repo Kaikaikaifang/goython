@@ -2,6 +2,7 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"log"
@@ -15,9 +16,15 @@ var (
 	port = flag.Int("port", 50051, "The server port")
 )
 
-// server is used to implement helloworld.GreeterServer.
+// server is used to implement calculator.CalculatorServer.
 type server struct {
 	pb.UnimplementedCalculatorServer
+}
+
+func (s *server) Add(ctx context.Context, in *pb.AddRequest) (*pb.AddResponse, error) {
+	result := in.GetA() + in.GetB()
+	log.Printf("Add: %d + %d = %d", in.GetA(), in.GetB(), result)
+	return &pb.AddResponse{Result: &result}, nil
 }
 
 func main() {

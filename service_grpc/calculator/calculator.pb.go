@@ -26,8 +26,8 @@ type AddRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	A int32 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
-	B int32 `protobuf:"varint,2,opt,name=b" json:"b,omitempty"`
+	A *int32 `protobuf:"varint,1,opt,name=a" json:"a,omitempty"`
+	B *int32 `protobuf:"varint,2,opt,name=b" json:"b,omitempty"`
 }
 
 func (x *AddRequest) Reset() {
@@ -61,15 +61,15 @@ func (*AddRequest) Descriptor() ([]byte, []int) {
 }
 
 func (x *AddRequest) GetA() int32 {
-	if x != nil {
-		return x.A
+	if x != nil && x.A != nil {
+		return *x.A
 	}
 	return 0
 }
 
 func (x *AddRequest) GetB() int32 {
-	if x != nil {
-		return x.B
+	if x != nil && x.B != nil {
+		return *x.B
 	}
 	return 0
 }
@@ -80,7 +80,7 @@ type AddResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Result int32 `protobuf:"varint,1,opt,name=result" json:"result,omitempty"`
+	Result *int32 `protobuf:"varint,1,opt,name=result" json:"result,omitempty"`
 }
 
 func (x *AddResponse) Reset() {
@@ -114,8 +114,8 @@ func (*AddResponse) Descriptor() ([]byte, []int) {
 }
 
 func (x *AddResponse) GetResult() int32 {
-	if x != nil {
-		return x.Result
+	if x != nil && x.Result != nil {
+		return *x.Result
 	}
 	return 0
 }
@@ -139,7 +139,7 @@ var file_calculator_calculator_proto_rawDesc = []byte{
 	0x2f, 0x4b, 0x61, 0x69, 0x6b, 0x61, 0x69, 0x6b, 0x61, 0x69, 0x66, 0x61, 0x6e, 0x67, 0x2f, 0x67,
 	0x6f, 0x79, 0x74, 0x68, 0x6f, 0x6e, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x67,
 	0x72, 0x70, 0x63, 0x2f, 0x63, 0x61, 0x6c, 0x63, 0x75, 0x6c, 0x61, 0x74, 0x6f, 0x72, 0x92, 0x03,
-	0x02, 0x08, 0x02, 0x62, 0x08, 0x65, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x70, 0xe8, 0x07,
+	0x02, 0x08, 0x01, 0x62, 0x08, 0x65, 0x64, 0x69, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x70, 0xe8, 0x07,
 }
 
 var (
