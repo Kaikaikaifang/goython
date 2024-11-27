@@ -16,7 +16,7 @@ def run():
     with grpc.insecure_channel("localhost:50051") as channel:
         stub = calculator_pb2_grpc.CalculatorStub(channel)
         response: calculator_pb2.AddResponse = stub.Add(calculator_pb2.AddRequest(a=1, b=2))
-    print("Calculator client received: 1 + 2 = " + str(response.result))
+    print("Calculator client: 1 + 2 = " + str(response.result))
 
 
 if __name__ == "__main__":
