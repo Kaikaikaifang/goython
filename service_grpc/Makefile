@@ -1,7 +1,7 @@
 SOURCES := $(wildcard *.proto)
 SERVICE_NAME := calculator
 
-all: proto
+all: proto test
 
 proto: $(SOURCES)
 	protoc --go_out=. --go_opt=paths=source_relative \
