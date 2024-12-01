@@ -8,7 +8,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Kaikaikaifang/goython/service_grpc/calculator"
+	pb "github.com/Kaikaikaifang/goython/service_grpc/proto"
 	"google.golang.org/grpc"
 )
 
@@ -24,7 +24,7 @@ type server struct {
 func (s *server) Add(ctx context.Context, in *pb.AddRequest) (*pb.AddResponse, error) {
 	result := in.GetA() + in.GetB()
 	log.Printf("Add: %d + %d = %d", in.GetA(), in.GetB(), result)
-	return &pb.AddResponse{Result: &result}, nil
+	return &pb.AddResponse{Result: result}, nil
 }
 
 func main() {

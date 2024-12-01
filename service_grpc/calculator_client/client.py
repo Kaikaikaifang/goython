@@ -5,10 +5,10 @@ from __future__ import print_function
 import logging
 
 import grpc
-import calculator_pb2
-import calculator_pb2_grpc
+from service_grpc.proto import calculator_pb2, calculator_pb2_grpc
 
-def run():
+
+def add():
     # NOTE(gRPC Python Team): .close() is possible on a channel and should be
     # used in circumstances in which the with statement does not fit the needs
     # of the code.
@@ -21,4 +21,4 @@ def run():
 
 if __name__ == "__main__":
     logging.basicConfig()
-    run()
+    add()

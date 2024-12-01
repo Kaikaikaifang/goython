@@ -1,9 +1,10 @@
-edition = "2023";
+// edition = "2023";
+syntax = "proto3";
 
 package calculator;
 
 // 字段存在性检查: EXPLICIT(显式) or IMPLICIT(隐式)
-option features.field_presence = EXPLICIT;
+// option features.field_presence = EXPLICIT;
 option go_package = "github.com/Kaikaikaifang/goython/service_grpc/calculator";
 
 // Calculator is a service that implements basic arithmetic operations.

@@ -1,2 +1,4 @@
 .idea/
 service_grpc/calculator_client/__pycache__/
+*.pyc
+bin/
