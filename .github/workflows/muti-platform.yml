@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 jobs:
-  test-platforms:
+  test-platform:
     runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
@@ -25,6 +25,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: service_grpc/go.mod
+          cache-dependency-path: service_grpc/go.sum
 
       - name: Run tests
         run: make test
