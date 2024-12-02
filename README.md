@@ -4,9 +4,8 @@
 
 ## TODO
 
-- [ ] 交叉编译: github action go 多平台编译测试 (不同平台 python sdk 中的可执行文件不同)
+- [x] 交叉编译: github action go 多平台编译测试 (不同平台 python sdk 中的可执行文件不同)
 - [x] 调用测试：python 使用 subprocess 调用 go 生成的可执行文件
-- [ ] 可观测性：为 grpc 接入 openTelemetry 进行链路追踪测试
 
 ## 静态库
 
