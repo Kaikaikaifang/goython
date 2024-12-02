@@ -15,7 +15,7 @@ proto:
 
 build: proto
 # CGO_ENABLED=0: 生成的二进制文件不依赖于外部 C 运行时库
-	cd service_grpc && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ../bin/$(SERVICE_NAME)_server $(SERVICE_NAME)_server/main.go
+	cd service_grpc && CGO_ENABLED=0 go build -o ../bin/$(SERVICE_NAME)_server $(SERVICE_NAME)_server/main.go
 
 test: build
 	python mock.py
