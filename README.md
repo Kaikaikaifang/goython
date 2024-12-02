@@ -4,7 +4,7 @@
 
 ## TODO
 
-- [x] 交叉编译: github action go 多平台编译测试 (不同平台 python sdk 中的可执行文件不同)
+- [x] 交叉编译: github action go 多平台编译测试
 - [x] 调用测试：python 使用 subprocess 调用 go 生成的可执行文件
 
 ## 静态库
