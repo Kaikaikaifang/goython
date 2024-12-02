@@ -15,7 +15,6 @@
 
 ```shell
 cd lib_static
-pip install Cython
 make
 ```
 
@@ -27,7 +26,6 @@ make
 
 ```shell
 cd lib_dynamic
-pip install ctypes
 make
 ```
 
@@ -38,8 +36,7 @@ make
 测试流程：
 
 ```shell
-make
-python mock.py
+make test
 ```
 
 ## 依赖
