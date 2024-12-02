@@ -41,7 +41,7 @@ make test
 
 ## 依赖
 
-1. protoc
+1. protoc (如果需要重新编译 `proto` 文件，需要安装)
 2. Go with protobuf runtime and grpc tools
 3. Python with protobuf runtime and grpc tools
 
