@@ -2,6 +2,7 @@
 import subprocess
 import atexit
 import service_grpc.calculator_client as calculator_client
+import pathlib
 
 
 class MockSdk:
@@ -10,7 +11,7 @@ class MockSdk:
         self.hooks = []
 
     def init(self):
-        command = ["bin/calculator_server"]
+        command = [str(pathlib.Path("bin", "calculator_server"))]
         self.process = subprocess.Popen(command)
         self.hooks.append(self.process.terminate)
         atexit.register(self.process.terminate)
