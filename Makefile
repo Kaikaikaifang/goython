@@ -23,4 +23,7 @@ test: build
 	python mock.py
 
 clean:
-	rm -rf bin/*
+# 1. 删除 python 编译产物
+	rm -rf build dist *.egg-info
+# 2. 删除 go 编译产物
+	rm -rf service_grpc/bin
