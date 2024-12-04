@@ -8,7 +8,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Kaikaikaifang/goython/service_grpc/proto"
+	pb "github.com/Kaikaikaifang/goython/service_grpc/calculator_server/pkg/proto"
 	"google.golang.org/grpc"
 )
 

@@ -7,6 +7,8 @@ proto:
 	--go-grpc_out=. --go-grpc_opt=paths=source_relative \
 	service_grpc/proto/$(SERVICE_NAME).proto
 
+	mv service_grpc/proto/*.pb.go service_grpc/$(SERVICE_NAME)_server/pkg/proto/
+
 	python3 -m grpc_tools.protoc -Iservice_grpc/proto=service_grpc/proto \
 	--python_out=. \
 	--pyi_out=. \
@@ -15,7 +17,7 @@ proto:
 
 build:
 # CGO_ENABLED=0: 生成的二进制文件不依赖于外部 C 运行时库
-	cd service_grpc && CGO_ENABLED=0 go build -o bin/$(SERVICE_NAME)_server $(SERVICE_NAME)_server/main.go
+	cd service_grpc/$(SERVICE_NAME)_server && CGO_ENABLED=0 go build -o ../bin/$(SERVICE_NAME)_server main.go
 
 test: build
 	python mock.py

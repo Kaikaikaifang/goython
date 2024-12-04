@@ -1,4 +1,4 @@
-module github.com/Kaikaikaifang/goython/service_grpc
+module github.com/Kaikaikaifang/goython/service_grpc/calculator_server
 
 go 1.23.3
 
