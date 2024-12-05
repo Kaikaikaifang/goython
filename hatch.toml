@@ -1,0 +1,12 @@
+[version]
+path = "service_grpc/__init__.py"
+
+[build.targets.sdist]
+exclude = ["lib_dynamic", "lib_static"]
+
+[build.targets.wheel]
+exclude = ["service_grpc/calculator_server"]
+artifacts = ["service_grpc/bin"]
+
+[build.targets.wheel.hooks.custom]
+path = "hatch_build.py"

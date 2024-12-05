@@ -1,0 +1,12 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "service-grpc"
+dynamic = ["version"]
+description = "This is a test of grpc service."
+readme = "package_readme.md"
+license = "MIT"
+requires-python = ">=3.8"
+dependencies = ["grpcio-tools==1.68.0", "grpcio==1.68.0", "protobuf==5.28.3"]

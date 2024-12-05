@@ -29,8 +29,8 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version-file: service_grpc/go.mod
-          cache-dependency-path: service_grpc/go.sum
+          go-version-file: service_grpc/calculator_server/go.mod
+          cache-dependency-path: service_grpc/calculator_server/go.sum
 
       - name: Run tests
         run: make test
